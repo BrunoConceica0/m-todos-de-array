@@ -1,6 +1,7 @@
 import insertBook from "./methodForEarch.js";
 import ApplycDiscount from "./methodMap.js";
 import filterBooks from "./methodFilter.js";
+import sortPrices from "./methodSortPrices.js";
 
 let books = [];
 const btnfilterBooks = document.querySelectorAll(".nav button");
@@ -32,6 +33,6 @@ async function getSeachBooks() {
   books = await res.json();
   let discountBooks = ApplycDiscount(books);
   insertBook(discountBooks);
+  sortPrices(discountBooks);
 }
-
 getSeachBooks();
