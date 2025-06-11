@@ -1,5 +1,8 @@
 function insertBook(listOfBooks) {
   const elementToinsertBook = document.getElementById("livros");
+  // elementToinsertBook.innerHTML = "" para limpar o conteudo da div quando for chamado a função de filtar
+  
+  elementToinsertBook.innerHTML = "";
   listOfBooks.forEach((book) => {
     elementToinsertBook.innerHTML += `
     <div class="livro">
