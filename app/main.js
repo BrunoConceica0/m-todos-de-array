@@ -2,6 +2,7 @@ import insertBook from "./methodForEarch.js";
 import ApplycDiscount from "./methodMap.js";
 import filterBooks from "./methodFilter.js";
 import sortPrices from "./methodSortPrices.js";
+// import booksAvailable from "./booksAvailable.js";
 
 let books = [];
 const btnfilterBooks = document.querySelectorAll(".nav button");
@@ -15,8 +16,9 @@ btnfilterBooks.forEach((btn) => {
   btn.addEventListener("click", (event) => {
     event.preventDefault();
     const category = event.target.value;
+    const booksQuantity = books.filter((book) => book.quantidade > 0);
 
-    const filteredBooks = filterBooks(books, category);
+    const filteredBooks = filterBooks(booksQuantity, category);
 
     insertBook(filteredBooks);
   });
