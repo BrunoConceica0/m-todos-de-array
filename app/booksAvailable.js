@@ -1,9 +1,13 @@
-// import insertBook from "./methodForEarch.js";
-// const booksAvailable = document.getElementById("btnLivrosDisponiveis");
-// booksAvailable.addEventListener("click", availability);
-// function availability({ quantidade }) {
-//   const booksAvailable = quantidade.filter((book) => book.quantidade > 0);
-//   insertBook(booksAvailable);
-// }
+import insertBook from "./methodForEarch.js";
 
-// export default availability;
+function availability(books) {
+  const booksQuantity = books.filter((book) => book.quantidade > 0);
+
+  if (booksQuantity.length === 0) {
+    alert("Não há livros disponíveis no momento");
+  } else {
+    insertBook(booksQuantity);
+  }
+}
+
+export default availability;
