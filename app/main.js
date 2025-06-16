@@ -22,12 +22,12 @@ const endpointAPI =
 async function getSeachBooks() {
   const res = await fetch(endpointAPI);
   books = await res.json();
-  console.log(books);
+
   let discountBooks = ApplycDiscount(books);
   insertBook(discountBooks);
   sortPrices(discountBooks);
-  insertValueTotal(discountBooks);
   filterbooks(discountBooks);
+  insertValueTotal(discountBooks);
   const availableBooks = document.getElementById("btnLivrosDisponiveis");
   availableBooks.addEventListener("click", () => availability(discountBooks));
 }
