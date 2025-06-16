@@ -3,6 +3,7 @@ function insertBook(listOfBooks) {
   const elementToinsertBook = document.getElementById("livros");
   // elementToinsertBook.innerHTML = "" para limpar o conteudo da div quando for chamado a função de filtar
   elementToinsertBook.innerHTML = "";
+
   listOfBooks.forEach((book) => {
     // aqui eu estou chamando a função de verificar a disponibilidade do livro
     let availability = book.quantidade > 0 ? "" : " indisponivel";
