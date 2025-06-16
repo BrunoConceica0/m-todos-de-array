@@ -1,5 +1,6 @@
 import convertReal from "./convetReal.js";
 const valueTotal = document.getElementById("valor_total_livros_disponiveis");
+
 function insertValueTotal(books) {
   let value = books.reduce((acc, books) => acc + books.preco, 0);
   value = convertReal(value);
